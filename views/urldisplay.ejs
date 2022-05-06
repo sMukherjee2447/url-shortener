@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="my-4">
+            This is the display Page
+        </h1>
+        <h5 class="my-2">
+            Topmost entry represents the latest entry
+        </h5>
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Full URL</th>
+                    <th>Short URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% shortUrls.reverse().forEach(shortUrl => { %>
+                    <tr>
+                        <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+                        <td><a href="http://localhost:3000/<%= shortUrl.short %>">http://localhost:3000/<%= shortUrl.short %></a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <h5>
+
+                <a href="/">Go back to previous page</a>
+            </h5>
+        </div>
+</body>
+</html>
